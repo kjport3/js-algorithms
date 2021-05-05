@@ -12,7 +12,7 @@ export function removeDuplicates(nums) {
         }
     }
     return [nums.length, nums];
-};
+}
 
 export function removeDuplicatesLeet(nums) {
     if (nums.length == 0) {
@@ -27,4 +27,4 @@ export function removeDuplicatesLeet(nums) {
         }
         return i + 1;
     }
-};
+}

@@ -7,4 +7,6 @@ import { bubbleSort, selectionSort, insertionSort } from './algorithms/sortingAl
 
 let array = [4,2,7,1,3];
 
+console.log(array);
+
 console.log(selectionSort(array));

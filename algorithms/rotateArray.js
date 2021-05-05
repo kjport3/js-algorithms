@@ -10,8 +10,8 @@ export function rotateArray(nums, k) {
     arrayShift.splice.apply(arrayShift, [0, 0].concat(arraySlice));
 
     return arrayShift;
-};
+}
 
 export function rotateArrayLeet(nums, k) {
     nums.unshift(...nums.splice(nums.length - k));
-};
+}

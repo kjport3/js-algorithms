@@ -1,0 +1,21 @@
+{
+    "name": "js-algorithms",
+    "version": "1.0.0",
+    "author": {
+        "name": "Kenny Porterfield",
+        "email": "kjport3@gmail.com",
+        "url": "http://www.kennyporterfield.com"
+    },
+    "description": "Where I work on JS algorithms using Node & ES6 modules",
+    "main": "main.js",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+        "start": "npm run dev",
+        "unit": "jest --config test/unit/jest.conf.js --coverage",
+        "test": "npm run unit",
+        "lint": "eslint --ext .js,.vue src test/unit",
+        "build": "node build/build.js"
+      }
+}

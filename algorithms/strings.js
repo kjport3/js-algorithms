@@ -17,10 +17,33 @@ function characterCount(str) {
             }
         }
     }
-        
-
     // Return the object at the end
     return counts;
 }
 
-export { characterCount };
+// CHARACTER COUNTING REFACTOR
+function characterCountRefactor(str) {
+    let counts = {};
+    // Instead of a tradition for loop, we can use a for ... of here
+    for (let char of str) {
+        char = char.toLowerCase();
+        if (isAlphaNumeric(char)) {
+            // We can simplify/shorthand this if statement by using a short-circuit evaluation
+            counts[char] = ++counts[char] || 1;
+        }
+    }
+    // Return the object at the end
+    return counts;
+}
+// Create a function to check if a character is alphanumer by checking its character code instead of regex, much faster
+function isAlphaNumeric(char) {
+    let code = char.charCodeAt(0);
+    if (!(code > 47 && code < 58) && 
+        !(code > 64 && code < 91) && 
+        !(code > 96 && code < 123)) {
+        return false;
+    }
+    return true;
+}
+
+export { characterCount, characterCountRefactor };

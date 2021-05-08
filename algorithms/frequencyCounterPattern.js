@@ -5,7 +5,7 @@ if every value in the array has it's corresponding value squared in the second a
 The frequency of values must be the same. */
 
 // "Naive" Algorithm - O(N^2)
-function same(arr1, arr2) {
+function sameSquared(arr1, arr2) {
     // If the lengths of the arrays aren't equal, the conditons can't be met so we return false
     if(arr1.length !== arr2.length) {
         return false;
@@ -27,7 +27,7 @@ function same(arr1, arr2) {
 
 // Refactored Algorithm - O(N)
 // 2 separate loops is vastly better than 2 nested loops. O(2N) is way faster than O(N^2)
-function sameRefactored(arr1, arr2) {
+function sameSquaredRefactor(arr1, arr2) {
     if(arr1.length !== arr2.length) {
         return false;
     }
@@ -106,4 +106,4 @@ function validAnagram(str1, str2) {
 }
 
 
-export { same, sameRefactored, validAnagram };
+export { sameSquared, sameSquaredRefactor, validAnagram };

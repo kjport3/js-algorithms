@@ -45,6 +45,16 @@ function rotateArray(nums, k) {
     return arrayShift;
 }
 
+function rotateArrayRefactor(nums, k) {
+    let i = nums.length - 1;
+    for(i; i >= nums.length - k; i--) {
+        let endIndex = nums.length - 1;
+        nums.unshift(nums[endIndex]);
+        nums.pop();
+    }
+    return nums;
+}
+
 function rotateArrayLeet(nums, k) {
     nums.unshift(...nums.splice(nums.length - k));
 }
@@ -80,4 +90,25 @@ function singleNumber(arr) {
 
 /*********************************************/
 
-export { removeDuplicates, removeDuplicatesLeet, rotateArray, rotateArrayLeet, singleNumber };
+
+// CONTAINS DUPLICATE
+/* Given an integer array nums, return true if any value appears at 
+least twice in the array, and return false if every element is unique */
+
+function containsDuplicate(nums) {
+    if(nums.length === 1) return false;
+    let numCount = {};
+    for (let val of nums) {
+        numCount[val] = (numCount[val] || 0) + 1;
+    }
+    for (let key in numCount) {
+        if(numCount[key] > 1) return true;
+    }
+    return false;
+}
+
+
+
+/*********************************************/
+
+export { removeDuplicates, removeDuplicatesLeet, rotateArray, rotateArrayRefactor, singleNumber, containsDuplicate };

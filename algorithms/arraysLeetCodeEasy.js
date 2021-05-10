@@ -46,8 +46,7 @@ function rotateArray(nums, k) {
 }
 
 function rotateArrayRefactor(nums, k) {
-    let i = nums.length - 1;
-    for(i; i >= nums.length - k; i--) {
+    for(let i = 0; i < k; i++) {
         let endIndex = nums.length - 1;
         nums.unshift(nums[endIndex]);
         nums.pop();

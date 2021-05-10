@@ -65,6 +65,7 @@ function sameSquaredRefactor(arr1, arr2) {
 
 /********************************************************************/
 
+
 // CODING CHALLENGE
 
 // ANAGRAMS
@@ -106,4 +107,67 @@ function validAnagram(str1, str2) {
 }
 
 
-export { sameSquared, sameSquaredRefactor, validAnagram };
+/********************************************************************/
+
+
+// CUBED SETS
+/* Given an integer n, return true if n^3 and n have the same set of digits. */
+// Example:
+// sameDigits(1) // true
+// sameDigits(10) // true
+// sameDigits(251894) // true
+// sameDigits(251895) // false
+
+function sameDigits(num) {
+    // Short circuit return true if the num is 1 or 0
+    // so we don't have to go through the whole function
+    if(num === 1 || num === 0) return true;
+    
+    // Find out what our input is cubed
+    let numCubed = num * num * num;
+
+    // Convert our numbers to strings so 
+    // we can iterate through them with a for of loop
+    num = num.toString();
+    numCubed = numCubed.toString();
+
+    // Declare variables for our objects that we'll use to store
+    // the set of values
+    let numCount = {};
+    let numCubedCount = {};
+
+    // Do a for of loop on our num and numCubed to create
+    // a data structure that contains the set of values present 
+    // in each
+    for (let digit of num) {
+        numCount[digit] = (numCount[digit] || 0) + 1;
+    }
+    for (let digit of numCubed) {
+        numCubedCount[digit] = (numCubedCount[digit] || 0) + 1;
+    }
+
+    // Are the number of keys equal in each object?
+    // If the result contains the same set of numbers
+    // the # of keys should be equal
+    // If they're not, one of the numbers contains a different
+    // number than the other, so return false
+    let numKeyCount = Object.keys(numCount).length;
+    let numCubedKeyCount = Object.keys(numCubedCount).length;
+    if(numKeyCount !== numCubedKeyCount) return false;
+
+    // For each key in the first object
+    for(let key in numCount) {
+        // Does the key in the second object? If not, we return false
+        if(!(key in numCubedCount)) {
+            return false;
+        }
+    }
+
+    // If we have the same # of keys and each key in the
+    // first object has a corresponding key in the second
+    // object, then they contain the same set of numbers
+    // so we can return true
+    return true;
+}
+
+export { sameSquared, sameSquaredRefactor, validAnagram, sameDigits };

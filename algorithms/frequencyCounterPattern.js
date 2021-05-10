@@ -124,7 +124,7 @@ function sameDigits(num) {
     if(num === 1 || num === 0) return true;
     
     // Find out what our input is cubed
-    let numCubed = num * num * num;
+    let numCubed = num ** 3;
 
     // Convert our numbers to strings so 
     // we can iterate through them with a for of loop
@@ -170,4 +170,96 @@ function sameDigits(num) {
     return true;
 }
 
-export { sameSquared, sameSquaredRefactor, validAnagram, sameDigits };
+
+/********************************************************************/
+
+
+// SAME FREQUENCY
+/* Write a function called sameFrequency. Given 2 positive integers, 
+find out if the two numbers have the same frequency of digits. */
+
+function sameFrequency(int1, int2) {
+    // Go ahead and return true if we just have the same numbers
+    if (int1 === int2) return true;
+
+    // Convert our numbers to strings so 
+    // we can iterate through them with a for of loop
+    let num1 = int1.toString();
+    let num2 = int2.toString();
+
+    // Declare variables for our objects that we'll use to store
+    // the set of values
+    let num1FrequencyCount = {};
+    let num2FrequencyCount = {};
+
+    // Do a for of loop on our nums to create
+    // a data structure that contains the set of values present 
+    // in each
+    for (let digit of num1) {
+        num1FrequencyCount[digit] = (num1FrequencyCount[digit] || 0) + 1;
+    }
+    for (let digit of num2) {
+        num2FrequencyCount[digit] = (num2FrequencyCount[digit] || 0) + 1;
+    }
+
+    // Are the number of keys equal in each object?
+    // If the result contains the same set of numbers
+    // the # of keys should be equal
+    // If they're not, one of the numbers contains a different
+    // number than the other, so return false
+    let num1KeyCount = Object.keys(num1FrequencyCount).length;
+    let num2KeyCount = Object.keys(num2FrequencyCount).length;
+    if(num1KeyCount !== num2KeyCount) return false;
+
+    // For each key in the first object
+    for(let key in num1FrequencyCount) {
+        // Does the key in the second object? If not, we return false
+        if(!(key in num2FrequencyCount)) {
+            return false;
+        }
+        // Do the values in the object correspond? This is how we check if the frequency is the same. 
+        // If not, return false
+        if(num1FrequencyCount[key] !== num2FrequencyCount[key]) {
+            return false;
+        }
+    }
+
+    // If we have the same # of keys and each key in the
+    // first object has a corresponding key in the second
+    // object, then they contain the same set of numbers
+    // so we can return true
+    return true;
+}
+
+
+/********************************************************************/
+
+
+// ARE THERE DUPLICATES
+/* Implement a function which accepts a variable number 
+of arguments, and checks whether there are any duplicates 
+among the arguments passed in. */
+
+function areThereDuplicates() {
+    let argsArray = Array.from(arguments);
+    if (argsArray.length <= 1) return false;
+    let argFrequencyCount = {};
+    for (let val of argsArray) {
+        if (!argFrequencyCount[val]) {
+            argFrequencyCount[val] = 1;
+        } else {
+            return true;
+        }
+    }
+    return false;
+}
+
+function areThereDuplicatesOneLiner() {
+    return new Set(arguments).size !== arguments.length;
+  }
+
+
+/********************************************************************/
+
+
+export { sameSquared, sameSquaredRefactor, validAnagram, sameDigits, sameFrequency, areThereDuplicates, areThereDuplicatesOneLiner };

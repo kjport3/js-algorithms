@@ -42,4 +42,7 @@ function maxSubarraySumRefactor(arr, num) {
 
 /********************************************************************/
 
-export { maxSubarraySum, maxSubarraySumRefactor };
+export {
+    maxSubarraySum,
+    maxSubarraySumRefactor
+};

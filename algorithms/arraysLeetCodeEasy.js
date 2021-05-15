@@ -36,7 +36,7 @@ where k is non-negative. */
 
 function rotateArray(nums, k) {
     let i, j, arraySlice, arrayShift;
-    i = nums.length - k; 
+    i = nums.length - k;
     j = nums.length;
     arrayShift = nums.slice(0, i);
     arraySlice = nums.slice(i, j);
@@ -46,7 +46,7 @@ function rotateArray(nums, k) {
 }
 
 function rotateArrayRefactor(nums, k) {
-    for(let i = 0; i < k; i++) {
+    for (let i = 0; i < k; i++) {
         let endIndex = nums.length - 1;
         nums.unshift(nums[endIndex]);
         nums.pop();
@@ -68,7 +68,7 @@ except one. Find that one. */
 function singleNumber(arr) {
     // If the length of the array is one, then we return the only value 
     // in the array
-    if(arr.length === 1) return arr[0];
+    if (arr.length === 1) return arr[0];
     // Initialize an object that we will use to count the number of
     // each value in the array
     let valueCounter = {};
@@ -79,8 +79,8 @@ function singleNumber(arr) {
     }
     // For each key in the object, we check to see if the value equals 1
     // If it does, that's our single number, so we return that key
-    for(let key in valueCounter) {
-        if(valueCounter[key] === 1) {
+    for (let key in valueCounter) {
+        if (valueCounter[key] === 1) {
             return key;
         }
     }
@@ -95,13 +95,13 @@ function singleNumber(arr) {
 least twice in the array, and return false if every element is unique */
 
 function containsDuplicate(nums) {
-    if(nums.length === 1) return false;
+    if (nums.length === 1) return false;
     let numCount = {};
     for (let val of nums) {
         numCount[val] = (numCount[val] || 0) + 1;
     }
     for (let key in numCount) {
-        if(numCount[key] > 1) return true;
+        if (numCount[key] > 1) return true;
     }
     return false;
 }
@@ -110,4 +110,11 @@ function containsDuplicate(nums) {
 
 /*********************************************/
 
-export { removeDuplicates, removeDuplicatesLeet, rotateArray, rotateArrayRefactor, singleNumber, containsDuplicate };
+export {
+    removeDuplicates,
+    removeDuplicatesLeet,
+    rotateArray,
+    rotateArrayRefactor,
+    singleNumber,
+    containsDuplicate
+};

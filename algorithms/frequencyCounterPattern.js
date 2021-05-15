@@ -7,19 +7,19 @@ The frequency of values must be the same. */
 // "Naive" Algorithm - O(N^2)
 function sameSquared(arr1, arr2) {
     // If the lengths of the arrays aren't equal, the conditons can't be met so we return false
-    if(arr1.length !== arr2.length) {
+    if (arr1.length !== arr2.length) {
         return false;
     }
     // Loop over each index in the first array, checking to see what the index of its value squared is in the second array
     // If the squared value isn't present in the second array, indexOf will return -1, and we will return false
-    for(let i = 0; i < arr1.length; i++) {
+    for (let i = 0; i < arr1.length; i++) {
         let correctIndex = arr2.indexOf(arr1[i] ** 2);
-        if(correctIndex === -1) {
+        if (correctIndex === -1) {
             return false;
         }
         // If the squared value is in the second array, we will splice it out so that that same value can't be repeated
         // to ensure the frequency of values is the same
-        arr2.splice(correctIndex,1);
+        arr2.splice(correctIndex, 1);
     }
     // If we make it through the loop without returning false, then the conditions are met and we return true
     return true;
@@ -28,7 +28,7 @@ function sameSquared(arr1, arr2) {
 // Refactored Algorithm - O(N)
 // 2 separate loops is vastly better than 2 nested loops. O(2N) is way faster than O(N^2)
 function sameSquaredRefactor(arr1, arr2) {
-    if(arr1.length !== arr2.length) {
+    if (arr1.length !== arr2.length) {
         return false;
     }
     // We use an object to count the frequency of individual values in the arrays
@@ -47,14 +47,14 @@ function sameSquaredRefactor(arr1, arr2) {
     console.log(frequencyCounter1);
     console.log(frequencyCounter2);
     // For each key in the first object
-    for(let key in frequencyCounter1) {
+    for (let key in frequencyCounter1) {
         // Is the key squared in the second object? If not, we return false
-        if(!(key ** 2 in frequencyCounter2)) {
+        if (!(key ** 2 in frequencyCounter2)) {
             return false;
         }
         // Do the values in the object correspond? This is how we check if the frequency is the same. 
         // If not, return false
-        if(frequencyCounter2[key ** 2] !== frequencyCounter1[key]) {
+        if (frequencyCounter2[key ** 2] !== frequencyCounter1[key]) {
             return false;
         }
     }
@@ -74,7 +74,7 @@ is an anagram of the first. An anagram is a word, phrase, or name formed
 by rearranging the letters of another, such as cinema, formed from iceman. */
 function validAnagram(str1, str2) {
     // If the lengths of the strings aren't the same, it won't be an anagram
-    if(str1.length !== str2.length) {
+    if (str1.length !== str2.length) {
         return false;
     }
     // We use an object to count the number of individual characters in the strings
@@ -91,14 +91,14 @@ function validAnagram(str1, str2) {
     console.log(characterCounter1);
     console.log(characterCounter2);
     // For each key in the first object
-    for(let key in characterCounter1) {
+    for (let key in characterCounter1) {
         // Does the key in the second object? If not, we return false
-        if(!(key in characterCounter2)) {
+        if (!(key in characterCounter2)) {
             return false;
         }
         // Are the counts of each character the same in both objects?
         // If not, return false
-        if(characterCounter2[key] !== characterCounter1[key]) {
+        if (characterCounter2[key] !== characterCounter1[key]) {
             return false;
         }
     }
@@ -121,8 +121,8 @@ function validAnagram(str1, str2) {
 function sameDigits(num) {
     // Short circuit return true if the num is 1 or 0
     // so we don't have to go through the whole function
-    if(num === 1 || num === 0) return true;
-    
+    if (num === 1 || num === 0) return true;
+
     // Find out what our input is cubed
     let numCubed = num ** 3;
 
@@ -153,12 +153,12 @@ function sameDigits(num) {
     // number than the other, so return false
     let numKeyCount = Object.keys(numCount).length;
     let numCubedKeyCount = Object.keys(numCubedCount).length;
-    if(numKeyCount !== numCubedKeyCount) return false;
+    if (numKeyCount !== numCubedKeyCount) return false;
 
     // For each key in the first object
-    for(let key in numCount) {
+    for (let key in numCount) {
         // Does the key in the second object? If not, we return false
-        if(!(key in numCubedCount)) {
+        if (!(key in numCubedCount)) {
             return false;
         }
     }
@@ -209,17 +209,17 @@ function sameFrequency(int1, int2) {
     // number than the other, so return false
     let num1KeyCount = Object.keys(num1FrequencyCount).length;
     let num2KeyCount = Object.keys(num2FrequencyCount).length;
-    if(num1KeyCount !== num2KeyCount) return false;
+    if (num1KeyCount !== num2KeyCount) return false;
 
     // For each key in the first object
-    for(let key in num1FrequencyCount) {
+    for (let key in num1FrequencyCount) {
         // Does the key in the second object? If not, we return false
-        if(!(key in num2FrequencyCount)) {
+        if (!(key in num2FrequencyCount)) {
             return false;
         }
         // Do the values in the object correspond? This is how we check if the frequency is the same. 
         // If not, return false
-        if(num1FrequencyCount[key] !== num2FrequencyCount[key]) {
+        if (num1FrequencyCount[key] !== num2FrequencyCount[key]) {
             return false;
         }
     }
@@ -256,10 +256,18 @@ function areThereDuplicates() {
 
 function areThereDuplicatesOneLiner() {
     return new Set(arguments).size !== arguments.length;
-  }
+}
 
 
 /********************************************************************/
 
 
-export { sameSquared, sameSquaredRefactor, validAnagram, sameDigits, sameFrequency, areThereDuplicates, areThereDuplicatesOneLiner };
+export {
+    sameSquared,
+    sameSquaredRefactor,
+    validAnagram,
+    sameDigits,
+    sameFrequency,
+    areThereDuplicates,
+    areThereDuplicatesOneLiner
+};

@@ -11,7 +11,7 @@ function characterCount(str) {
             // If the character is a number/letter AND is a key in the object, add one to count
             if (char in counts) {
                 counts[char]++;
-            // If the character is a number/letter AND is not a key in the object, add the key to the object and set value to 1
+                // If the character is a number/letter AND is not a key in the object, add the key to the object and set value to 1
             } else if (!(str[i] in counts)) {
                 counts[char] = 1;
             }
@@ -38,12 +38,15 @@ function characterCountRefactor(str) {
 // Create a function to check if a character is alphanumer by checking its character code instead of regex, much faster
 function isAlphaNumeric(char) {
     let code = char.charCodeAt(0);
-    if (!(code > 47 && code < 58) && 
-        !(code > 64 && code < 91) && 
+    if (!(code > 47 && code < 58) &&
+        !(code > 64 && code < 91) &&
         !(code > 96 && code < 123)) {
         return false;
     }
     return true;
 }
 
-export { characterCount, characterCountRefactor };
+export {
+    characterCount,
+    characterCountRefactor
+};

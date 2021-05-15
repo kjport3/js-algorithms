@@ -30,7 +30,8 @@ import {
     countUniqueValues,
     countUniqueValuesRefactor,
     pointersAreThereDuplicates,
-    averagePair
+    averagePair,
+    isSubsequence
 } from './algorithms/multiplePointersPattern.js';
 import {
     maxSubarraySum,
@@ -42,4 +43,5 @@ import {
 } from './algorithms/divideAndConquerPattern.js';
 
 
-console.log('hello' === 'hello');
+let string = "hello";
+console.log(string[0]);

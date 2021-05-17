@@ -35,7 +35,9 @@ import {
 } from './algorithms/multiplePointersPattern.js';
 import {
     maxSubarraySum,
-    maxSubarraySumRefactor
+    maxSubarraySumRefactor,
+    minSubArrayLen,
+    findLongestSubstring
 } from './algorithms/slidingWindowsPattern.js';
 import {
     linearSearch,
@@ -43,5 +45,4 @@ import {
 } from './algorithms/divideAndConquerPattern.js';
 
 
-let string = "hello";
-console.log(string[0]);
+console.log(minSubArrayLen([3,1,7,52], 47));

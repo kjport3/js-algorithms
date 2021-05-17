@@ -1,4 +1,14 @@
 import {
+    power,
+    sumRange,
+    collectOddValues,
+    factorial,
+    productOfArray,
+    fib,
+    reverse,
+    isPalindrome
+} from './algorithms/recursion.js';
+import {
     containsDuplicate,
     removeDuplicates,
     removeDuplicatesLeet,
@@ -45,4 +55,6 @@ import {
 } from './algorithms/divideAndConquerPattern.js';
 
 
-console.log(minSubArrayLen([3,1,7,52], 47));
+
+let string = 'hello';
+console.log(string.slice(1) + string[0]);

@@ -23,7 +23,8 @@ import {
 } from './algorithms/sortingAlgorithms.js';
 import {
     characterCount,
-    characterCountRefactor
+    characterCountRefactor,
+    naiveSearch
 } from './algorithms/strings.js';
 import {
     sameSquared,
@@ -56,5 +57,4 @@ import {
 
 
 
-let string = 'hello';
-console.log(string.slice(1) + string[0]);
+console.log(naiveSearch('lorie loled lol', 'lol'));

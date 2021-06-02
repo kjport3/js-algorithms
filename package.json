@@ -12,5 +12,8 @@
     "type": "module",
     "scripts": {
         "start": "node main.js"
-      }
+    },
+    "dependencies": {
+        "axios": "^0.21.1"
+    }
 }

@@ -78,4 +78,70 @@ function insertionSort(arr) {
 
 /*******************************************/
 
-export { bubbleSort, selectionSort, insertionSort };
+// QUICK SORT
+function quickSort(nums) {
+  // base case, array of length 0 or 1
+  if (nums.length < 2) return nums;
+  // choose pivot
+  let pivot = nums[nums.length - 1];
+  // separate into left and right arrays
+  let left = [];
+  let right = [];
+  for (let num of nums) {
+    if (num < pivot) left.push(num);
+    if (num > pivot) right.push(num);
+  }
+  // call quickSort on left and right arrays
+  const sortedLeft = quickSort(left);
+  const sortedRight = quickSort(right);
+  // return left.concat(pivot, right)
+  return sortedLeft.concat(pivot, sortedRight);
+
+  // can combine these last 3 lines into one with either
+  // of the following
+  // return quickSort(left).concat(pivot, quickSort(right));
+  // return [...quickSort(left), pivot, ...quickSort(right)];
+}
+
+/*******************************************/
+
+// MERGE SORT
+// mergeSort breaks down our input array
+// into a bunch of arrays of n = 1
+const mergeSort = (nums) => {
+  // base case, return if length 1 or 0
+  if (nums.length < 2) {
+    return nums;
+  }
+
+  // break into two smaller arrays
+  const length = nums.length;
+  const middle = Math.floor(length / 2);
+  const left = nums.slice(0, middle);
+  const right = nums.slice(middle);
+
+  // call mergeSort on left and right
+  const sortedLeft = mergeSort(left);
+  const sortedRight = mergeSort(right);
+
+  // return the merge of left and right
+  return merge(sortedLeft, sortedRight);
+};
+
+const merge = (left, right) => {
+  const results = [];
+
+  while (left.length && right.length) {
+    if (left[0] <= right[0]) {
+      results.push(left.shift());
+    } else {
+      results.push(right.shift());
+    }
+  }
+  // return one sorted array
+  return results.concat(left, right);
+};
+
+/*******************************************/
+
+export { bubbleSort, selectionSort, insertionSort, quickSort, mergeSort };

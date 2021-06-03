@@ -114,24 +114,30 @@ function containsDuplicate(nums) {
 
 
 // Add numbers in an array
-function arraySum(numbers) {
+function arraySum(arr) {
   // account for edge case of array having only one item
   // by simply returning that value
-  if (numbers.length === 1) return numbers[0];
+  if (arr.length === 1) return arr[0];
   // constraints say we're only dealing with positive integers, so
   // we'll initialize sum at 0
   let sum = 0;
   // loop through the numbers in the array and add each to sum
-  for (let num of numbers) {
+  for (let num of arr) {
     sum += num;
   }
   // return sum
   return sum;
 }
 
-// function arraySum(numbers) {
-//   return numbers.reduce((a, b) => a + b, 0);
-// }
+function arraySumReduce(arr) {
+  return arr.reduce((a, b) => a + b, 0);
+}
+
+function arraySumForEach(arr) {
+  let sum = 0;
+  arr.forEach(num => sum += num);
+  return sum;
+}
 
 
 /*********************************************/
@@ -143,5 +149,7 @@ export {
   rotateArrayRefactor,
   singleNumber,
   containsDuplicate,
-  arraySum
+  arraySum,
+  arraySumReduce,
+  arraySumForEach,
 };

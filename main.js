@@ -16,6 +16,8 @@ import {
   rotateArrayRefactor,
   singleNumber,
   arraySum,
+  arraySumForEach,
+  arraySumReduce
 } from "./algorithms/arraysLeetCodeEasy.js";
 import {
   bubbleSort,
@@ -23,6 +25,7 @@ import {
   insertionSort,
   quickSort,
   mergeSort,
+  radixSort,
 } from "./algorithms/sortingAlgorithms.js";
 import {
   characterCount,
@@ -59,7 +62,5 @@ import {
 } from "./algorithms/divideAndConquerPattern.js";
 
 
-console.log(mergeSort([1,6,2,4,67,2,4,567,21,2,3,51,4,9,7,8]));
 
-
-
+console.log(arraySumForEach([1, 2, 3, 4, 5]));

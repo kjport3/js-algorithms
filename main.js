@@ -31,6 +31,9 @@ import {
   characterCount,
   characterCountRefactor,
   naiveSearch,
+  firstUniqueCharacter,
+  firstUnique,
+  firstUniqueChar,
 } from "./algorithms/strings.js";
 import {
   sameSquared,
@@ -60,7 +63,17 @@ import {
   linearSearch,
   binarySearch,
 } from "./algorithms/divideAndConquerPattern.js";
+import {
+  scoreCalculator 
+} from "./algorithms/interviewQ.js";
 
+function hello() {
+  return function () {
+    return console.log("Hello world");
+  };
+}
 
-
-console.log(arraySumForEach([1, 2, 3, 4, 5]));
+const reverseString = (str) => {
+  const res = str.split('').reverse();
+  return res;
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1622761607457" clover="3.2.0">
+  <project timestamp="1622761607458" name="All files">
+    <metrics statements="50" coveredstatements="4" conditionals="20" coveredconditionals="0" methods="12" coveredmethods="2" elements="82" coveredelements="6" complexity="0" loc="50" ncloc="50" packages="1" files="1" classes="1"/>
+    <file name="arraysLeetCodeEasy.js" path="/Users/kennethporterfield/Repos/js-algorithms/algorithms/arraysLeetCodeEasy.js">
+      <metrics statements="50" coveredstatements="4" conditionals="20" coveredconditionals="0" methods="12" coveredmethods="2"/>
+      <line num="6" count="0" type="stmt"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="9" count="0" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="13" count="0" type="stmt"/>
+      <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="18" count="0" type="stmt"/>
+      <line num="20" count="0" type="stmt"/>
+      <line num="21" count="0" type="stmt"/>
+      <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="23" count="0" type="stmt"/>
+      <line num="24" count="0" type="stmt"/>
+      <line num="27" count="0" type="stmt"/>
+      <line num="41" count="0" type="stmt"/>
+      <line num="42" count="0" type="stmt"/>
+      <line num="43" count="0" type="stmt"/>
+      <line num="44" count="0" type="stmt"/>
+      <line num="45" count="0" type="stmt"/>
+      <line num="47" count="0" type="stmt"/>
+      <line num="51" count="0" type="stmt"/>
+      <line num="52" count="0" type="stmt"/>
+      <line num="53" count="0" type="stmt"/>
+      <line num="54" count="0" type="stmt"/>
+      <line num="56" count="0" type="stmt"/>
+      <line num="60" count="0" type="stmt"/>
+      <line num="74" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="77" count="0" type="stmt"/>
+      <line num="80" count="0" type="stmt"/>
+      <line num="81" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="85" count="0" type="stmt"/>
+      <line num="86" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="87" count="0" type="stmt"/>
+      <line num="101" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="102" count="0" type="stmt"/>
+      <line num="103" count="0" type="stmt"/>
+      <line num="104" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="106" count="0" type="stmt"/>
+      <line num="107" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="109" count="0" type="stmt"/>
+      <line num="120" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="123" count="0" type="stmt"/>
+      <line num="125" count="0" type="stmt"/>
+      <line num="126" count="0" type="stmt"/>
+      <line num="129" count="0" type="stmt"/>
+      <line num="133" count="0" type="stmt"/>
+      <line num="137" count="1" type="stmt"/>
+      <line num="138" count="3" type="stmt"/>
+      <line num="139" count="1" type="stmt"/>
+      <line num="159" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

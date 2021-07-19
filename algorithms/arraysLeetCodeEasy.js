@@ -139,6 +139,13 @@ function arraySumForEach(arr) {
   return sum;
 }
 
+/*********************************************/
+
+function createPhoneNumber(arr) {
+  let phoneNumber = ararrray.splice(0,0,'(',arr[0]);
+  return phoneNumber
+}
+
 
 /*********************************************/
 
@@ -153,3 +160,6 @@ export {
   arraySumReduce,
   arraySumForEach,
 };
+
+
+// module.exports = arraySumForEach
